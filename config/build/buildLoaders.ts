@@ -60,6 +60,9 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
     const fontsLoader = {
         test: /\.(woff(2)?|ttf(2)?|eot|otf)$/,
         type: "asset/resource",
+        generator: {
+            filename: "assets/fonts/[name][hash][ext]",
+        },
     };
 
     return [assetLoader, scssLoader, tsLoader, icoLoader, fontsLoader];
