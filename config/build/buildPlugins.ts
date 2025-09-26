@@ -5,6 +5,7 @@ import { BuildOptions } from "./types/types";
 import { pages, getParcials } from "../pages";
 import { svgPlugIn } from "./utils/svg-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import ImageminAvifWebpackPlugin from "imagemin-avif-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import SVGSpritemapPlugin from "svg-spritemap-webpack-plugin";
 import path from "path";
@@ -25,6 +26,20 @@ export function buildPlugins({
             __ENV__: JSON.stringify(mode),
         }),
         new SVGSpritemapPlugin(["src/assets/**/*.svg"]),
+        new ImageminAvifWebpackPlugin({
+            config: [
+                {
+                    test: /\.(jpe?g|png)/,
+                    options: {
+                        quality: 75,
+                    },
+                },
+            ],
+            overrideExtension: true,
+            detailedLogs: true,
+            silent: false,
+            strict: false,
+        }),
     ];
 
     if (pages.length > 0) {

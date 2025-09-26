@@ -30,6 +30,7 @@
         "html-webpack-plugin": "latest",
         "image-minimizer-webpack-plugin": "latest",
         "imagemin": "latest",
+        "imagemin-avif-webpack-plugin": "^0.0.4",
         "imagemin-gifsicle": "latest",
         "imagemin-jpegtran": "latest",
         "imagemin-optipng": "latest",
