@@ -7,12 +7,6 @@ export const pages: Page[] = [
         name: "index",
         chunks: ["main"],
     },
-    {
-        name: "About",
-    },
-    {
-        name: "Shop",
-    },
 ];
 
 export function getParcials(parcialsFolder: string) {
