@@ -1,7 +1,48 @@
-$mainColor: rgb(48, 93, 191);
+// Text Colors
+$mainTextColor: #000000;
+$darkTextColor: #e58311;
+$lightTextColor: #ffffff;
+$hoverLinkColor: #e58311;
 
-main {
-    @media (max-width: 323px) {
-        border-radius: 23px;
-    }
-}
+// Background Colors
+$lightBgColor: #ffffff;
+$darkBgColor: #e58311;
+$footerBgColor: #323232;
+
+// Border
+$borderColor: #e58211;
+$borderWidth: 1.5px;
+
+// Gradient
+$mainGrad: linear-gradient(-14deg, #ff9d2d 0%, #ffd877 100%);
+
+// Fonts
+$mainFontFamily: "Kodchasan", "Open Sans", sans-serif;
+$basicFontSize: 16px;
+
+//  Borders
+$bigBorderRadius: 1.88rem;
+
+//  Container
+$containerPadding: 15px;
+$smallContainerWidth: 1146px - ($containerPadding * 2);
+$bigContainerWidth: 1500px - ($containerPadding * 2);
+
+//  Transitions
+$basicTrans: all 0.3s;
+
+//  Scale
+$basicScale: scale(1.3);
+
+//  Opacity
+$basicOpacity: 0.8;
+
+// Paddings & Margins
+$mainPadding: 15px;
+$mainMargin: 15px;
+
+// Medias
+$mediaTablet: 992px;
+$mediaSmallTablet: 768px;
+$mediaMobile: 576px;
+$mediaSmallMobile: 320px;
