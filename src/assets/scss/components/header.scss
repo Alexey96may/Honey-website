@@ -1,0 +1,50 @@
+@use "../utils/vars";
+
+.header {
+    // &__container {
+    //     max-width: vars.$bigContainerWidth;
+    //     padding-right: calc(
+    //         (vars.$bigContainerWidth - vars.$smallContainerWidth) / 2
+    //     );
+    //     display: flex;
+    //     flex-wrap: nowrap;
+    //     justify-content: space-between;
+    //     align-items: center;
+    // }
+    background-color: darkblue;
+}
+
+body {
+    // &__container {
+    //     max-width: vars.$bigContainerWidth;
+    //     padding-right: calc(
+    //         (vars.$bigContainerWidth - vars.$smallContainerWidth) / 2
+    //     );
+    //     display: flex;
+    //     flex-wrap: nowrap;
+    //     justify-content: space-between;
+    //     align-items: center;
+    // }
+    background-color: darkblue;
+}
+
+// .logo_wrapper {
+// }
+
+// .logo {
+// }
+
+// .navigation {
+// }
+
+// .nav-list {
+// }
+
+// .nav_item {
+// }
+
+// .nav_item--active {
+// }
+
+// .burger {
+// }

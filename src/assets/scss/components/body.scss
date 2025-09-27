@@ -1,0 +1,18 @@
+@use "../utils/fonts";
+@use "../utils/vars";
+
+body {
+    background-color: vars.$lightBgColor;
+    font-family: vars.$mainFontFamily;
+    color: vars.$mainTextColor;
+}
+
+.container {
+    max-width: vars.$smallContainerWidth;
+    padding: 0 vars.$containerPadding;
+    margin: 0 auto;
+}
+
+.display--none {
+    display: none;
+}

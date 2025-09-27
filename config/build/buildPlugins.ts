@@ -10,6 +10,7 @@ import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import SVGSpritemapPlugin from "svg-spritemap-webpack-plugin";
 import path from "path";
 import CopyPlugin from "copy-webpack-plugin";
+import WatchExternalFilesPlugin from "webpack-watch-files-plugin";
 
 export function buildPlugins({
     mode,
@@ -57,6 +58,8 @@ export function buildPlugins({
                     ),
                     chunks: page.chunks ? page.chunks : [],
                     partials: htmlParcials,
+                    hash: true,
+                    cache: false,
                 })
             );
         });
@@ -65,6 +68,11 @@ export function buildPlugins({
     if (isDev) {
         plugins.push(new webpack.ProgressPlugin());
         plugins.push(new ForkTsCheckerWebpackPlugin());
+        plugins.push(
+            new WatchExternalFilesPlugin({
+                files: ["./src/partials/**/*.html", "./src/pages/**/*.html"],
+            })
+        );
     }
 
     plugins.push(

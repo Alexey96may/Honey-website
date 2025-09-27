@@ -21,6 +21,11 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         },
     };
 
+    // const htmlLoader = {
+    //     test: /\.html$/i,
+    //     loader: "html-loader",
+    // };
+
     const cssLoaderWithModules = {
         loader: "css-loader",
         options: {
@@ -40,7 +45,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
             cssLoaderWithModules,
             "postcss-loader",
             "group-css-media-queries",
-            "sass-loader",
+            // "sass-loader",
         ],
     };
 
