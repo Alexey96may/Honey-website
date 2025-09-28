@@ -21,31 +21,14 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         },
     };
 
-    // const htmlLoader = {
-    //     test: /\.html$/i,
-    //     loader: "html-loader",
-    // };
-
-    const cssLoaderWithModules = {
-        loader: "css-loader",
-        options: {
-            modules: {
-                localIdentName: isDev
-                    ? "[path][name]__[local]"
-                    : "[hash:base64:8]",
-            },
-        },
-    };
-
     const scssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
-            // isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-            MiniCssExtractPlugin.loader,
-            cssLoaderWithModules,
+            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            "css-loader",
             "postcss-loader",
             "group-css-media-queries",
-            // "sass-loader",
+            "sass-loader",
         ],
     };
 

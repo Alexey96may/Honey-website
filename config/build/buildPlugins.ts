@@ -26,7 +26,11 @@ export function buildPlugins({
             __PLATFORM__: JSON.stringify(platform),
             __ENV__: JSON.stringify(mode),
         }),
-        new SVGSpritemapPlugin(["src/assets/**/*.svg"]),
+        new SVGSpritemapPlugin("src/assets/**/*.svg", {
+            output: {
+                filename: "/assets/sprites/spritemap.svg",
+            },
+        }),
         new ImageminAvifWebpackPlugin({
             config: [
                 {
@@ -57,7 +61,7 @@ export function buildPlugins({
                         `${page.name}.html`
                     ),
                     chunks: page.chunks ? page.chunks : [],
-                    partials: htmlParcials,
+                    partials: getParcials(paths.htmlPartials),
                     hash: true,
                     cache: false,
                 })

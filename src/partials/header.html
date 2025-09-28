@@ -1,18 +1,36 @@
-<header class="header">
+<header class="header" id="header" aria-label="Header">
     <div class="container header__container">
-        <div class="logo_wrapper">
-            <svg class="logo">
-                <use href="#"></use>
-            </svg>
+        <div class="logo_wrapper" aria-label="Logo section">
+            <a href="#"
+                ><svg class="logo" aria-label="Logo picture">
+                    <use
+                        href="./assets/sprites/spritemap.svg#sprite-honey"
+                    ></use>
+                </svg>
+            </a>
         </div>
-        <nav class="navigation">
-            <ul class="nav-list">
-                <li class="nav_item nav_item--active">Home</li>
-                <li class="nav_item">About</li>
-                <li class="nav_item">Our Product</li>
-                <li class="nav_item">Contact</li>
+        <nav class="navigation" id="headerNav" aria-label="Navigation">
+            <ul class="nav-list" aria-label="Navigation list">
+                <li class="nav_item nav_item--active">
+                    <a href="#" aria-label="To home section">Home</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#about" aria-label="To about section">About</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#product" aria-label="To our product section"
+                        >Our Product</a
+                    >
+                </li>
+                <li class="nav_item">
+                    <a href="#contact" aria-label="To contact section"
+                        >Contact</a
+                    >
+                </li>
             </ul>
         </nav>
-        <div class="burger display--none"></div>
+        <button class="burger" id="burger" aria-label="Open mobile menu">
+            <span class="burger__mid-line"></span>
+        </button>
     </div>
 </header>
