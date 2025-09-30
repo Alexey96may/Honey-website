@@ -2,7 +2,7 @@ import webpack, { Configuration, DefinePlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/types";
-import { pages, getParcials } from "../pages";
+import { pages } from "../pages";
 import { fontPlugIn } from "./utils/font-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import ImageminAvifWebpackPlugin from "imagemin-avif-webpack-plugin";
@@ -10,7 +10,6 @@ import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import SVGSpritemapPlugin from "svg-spritemap-webpack-plugin";
 import path from "path";
 import CopyPlugin from "copy-webpack-plugin";
-import WatchExternalFilesPlugin from "webpack-watch-files-plugin";
 
 export function buildPlugins({
     mode,
@@ -48,8 +47,6 @@ export function buildPlugins({
     ];
 
     if (pages.length > 0) {
-        const htmlParcials = getParcials(paths.htmlPartials);
-
         pages.forEach((page) => {
             plugins.push(
                 new HtmlWebpackPlugin({
@@ -61,8 +58,7 @@ export function buildPlugins({
                         `${page.name}.html`
                     ),
                     chunks: page.chunks ? page.chunks : [],
-                    partials: getParcials(paths.htmlPartials),
-                    hash: true,
+                    inject: false,
                     cache: false,
                 })
             );
@@ -72,11 +68,6 @@ export function buildPlugins({
     if (isDev) {
         plugins.push(new webpack.ProgressPlugin());
         plugins.push(new ForkTsCheckerWebpackPlugin());
-        plugins.push(
-            new WatchExternalFilesPlugin({
-                files: ["./src/partials/**/*.html", "./src/pages/**/*.html"],
-            })
-        );
     }
 
     plugins.push(

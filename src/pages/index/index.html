@@ -10,8 +10,7 @@
         <title>Honey</title>
     </head>
     <body>
-        <%= htmlWebpackPlugin.options.partials.header %> <%=
-        htmlWebpackPlugin.options.partials.main %> <%=
-        htmlWebpackPlugin.options.partials.footer %>
+        <!-- prettier-ignore! -->
+        <%=_.template(require('raw-loader!@/partials/header.html').default)()%>
     </body>
 </html>

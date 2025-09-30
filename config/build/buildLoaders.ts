@@ -11,6 +11,12 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         type: "asset/resource",
     };
 
+    const htmlLoader = {
+        test: /\.html$/,
+        include: path.resolve(__dirname, "src/partials"),
+        use: ["raw-loader"],
+    };
+
     const icoLoader = {
         test: /\.ico$/,
         type: "asset",
@@ -21,11 +27,18 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         },
     };
 
+    const cssLoader = {
+        loader: "css-loader",
+        options: {
+            sourceMap: true,
+        },
+    };
+
     const scssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
             isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-            "css-loader",
+            cssLoader,
             "postcss-loader",
             "group-css-media-queries",
             "sass-loader",
@@ -53,5 +66,12 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         },
     };
 
-    return [assetLoader, scssLoader, tsLoader, icoLoader, fontsLoader];
+    return [
+        assetLoader,
+        htmlLoader,
+        scssLoader,
+        tsLoader,
+        icoLoader,
+        fontsLoader,
+    ];
 }

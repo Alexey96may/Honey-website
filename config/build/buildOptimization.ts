@@ -10,10 +10,6 @@ export function buildOptimization({
 }: BuildOptions): Configuration["optimization"] {
     const optimization: Configuration["optimization"] = {
         minimize: true,
-        splitChunks: {
-            // include all types of chunks
-            chunks: "all",
-        },
         minimizer: [
             new ImageMinimizerPlugin({
                 minimizer: {

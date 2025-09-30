@@ -24,7 +24,3 @@ export interface Page {
     chunks?: string[];
     partials?: string[];
 }
-
-export interface Partial {
-    [key: string]: string;
-}
