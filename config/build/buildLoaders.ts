@@ -9,6 +9,9 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
     const assetLoader = {
         test: /\.(png|svg|jpg|jpeg|webp|avif)$/i,
         type: "asset/resource",
+        generator: {
+            filename: "assets/img/[name][hash][ext]",
+        },
     };
 
     const htmlLoader = {
@@ -31,6 +34,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         loader: "css-loader",
         options: {
             sourceMap: true,
+            url: false,
         },
     };
 

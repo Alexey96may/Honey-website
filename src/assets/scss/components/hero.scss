@@ -1,0 +1,297 @@
+@use "@/assets/scss/utils/vars";
+@use "@/assets/scss/utils/mixins";
+
+.hero {
+    padding: 0 vars.$mainPadding;
+
+    &__container {
+        position: relative;
+        background-color: vars.$darkBgColor;
+        background: url("./assets/img/hero_pic.png") center right / 686px 650px
+                no-repeat,
+            url("./assets/img/honey_text.png") center right / 1408px 650px
+                no-repeat,
+            vars.$mainGrad;
+        max-width: vars.$bigContainerWidth;
+        padding: 11.38rem 5rem 8.63rem;
+        border-radius: vars.$bigBorderRadius;
+
+        @media (max-width: vars.$mediaPC) {
+            &::before {
+                content: "";
+                border-radius: vars.$bigBorderRadius;
+                @include mixins.position(absolute, 0);
+                background: linear-gradient(
+                    191deg,
+                    rgba(255, 157, 45, 0) 0%,
+                    rgba(195, 90, 0, 0.7) 100%
+                );
+
+                @media (max-width: vars.$mediaTablet) {
+                    background: unset;
+                }
+            }
+        }
+
+        @media (max-width: vars.$mediaTablet) {
+            background: url("./assets/img/honey_text.png") center right / 1408px
+                    650px no-repeat,
+                vars.$mainGrad;
+            padding: 10rem 5rem 10rem;
+        }
+
+        @media (max-width: vars.$mediaTablet) {
+            padding: 7rem 5rem 7rem;
+        }
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            padding: 5rem;
+        }
+
+        @media (max-width: vars.$mediaMobile) {
+            padding: 3rem 1.5rem;
+        }
+    }
+
+    &__wrapper {
+        max-width: vars.$smallContainerWidth;
+        margin: 0 auto;
+        position: relative;
+
+        @media (max-width: vars.$mediaTablet) {
+            max-width: 500px;
+        }
+        @media (max-width: vars.$mediaMobile) {
+            max-width: 250px;
+        }
+        @media (max-width: vars.$mediaSmallMobile) {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 4.38rem;
+        max-width: 6.58em;
+        font-size: 6.25rem;
+        font-weight: 700;
+
+        @media (max-width: vars.$mediaTablet) {
+            margin-bottom: 3.38rem;
+            max-width: 100%;
+            font-size: 3.25rem;
+        }
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            margin-bottom: 2.38rem;
+            max-width: 100%;
+            font-size: 2.25rem;
+        }
+        @media (max-width: vars.$mediaMobile) {
+            margin-bottom: 2rem;
+        }
+        @media (max-width: vars.$mediaSmallMobile) {
+            margin-bottom: 1.5rem;
+        }
+
+        span {
+            display: block;
+            white-space: nowrap;
+            font-size: 4.25rem;
+
+            @media (max-width: vars.$mediaTablet) {
+                font-size: 3.25rem;
+            }
+
+            @media (max-width: vars.$mediaSmallTablet) {
+                font-size: 2.25rem;
+            }
+
+            @media (max-width: vars.$mediaMobile) {
+                font-size: 2rem;
+            }
+
+            @media (max-width: vars.$mediaSmallMobile) {
+                font-size: 1.6rem;
+            }
+        }
+
+        span:nth-child(2) {
+            text-indent: min(0.98em, 10vw);
+
+            @media (max-width: vars.$mediaTablet) {
+                text-indent: 20%;
+            }
+            @media (max-width: vars.$mediaMobile) {
+                text-indent: 15%;
+            }
+
+            @media (max-width: vars.$mediaSmallMobile) {
+                text-indent: 20%;
+            }
+        }
+
+        .hero__bee-wrapper {
+            display: inline-block;
+            height: 120px;
+            min-width: 190px;
+            width: min(275px, 20vw);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+            margin-right: 20px;
+
+            @media (max-width: vars.$mediaTablet) {
+                height: 58px;
+                min-width: 90px;
+            }
+            @media (max-width: vars.$mediaSmallTablet) {
+                height: 48px;
+                min-width: 70px;
+            }
+            @media (max-width: vars.$mediaMobile) {
+                height: 43px;
+                width: 63px;
+            }
+            @media (max-width: vars.$mediaSmallMobile) {
+                margin-right: 10px;
+                height: 30px;
+                width: 52px;
+            }
+        }
+    }
+
+    &__bee {
+        display: inline-block;
+        width: 189px;
+        height: 120px;
+        vertical-align: baseline;
+
+        @media (max-width: vars.$mediaTablet) {
+            width: 90px;
+            height: 58px;
+        }
+        @media (max-width: vars.$mediaSmallTablet) {
+            height: 48px;
+            width: 70px;
+        }
+        @media (max-width: vars.$mediaMobile) {
+            height: 43px;
+            width: 63px;
+        }
+        @media (max-width: vars.$mediaSmallMobile) {
+            height: 30px;
+            width: 52px;
+        }
+    }
+
+    &__button {
+        display: block;
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 1.6;
+        padding: 1em 2.78em;
+        color: vars.$mainTextColor;
+        border: 2px solid vars.$blackBgColor;
+        transition: vars.$basicTrans;
+
+        @media (max-width: vars.$mediaTablet) {
+            padding: 0.8em 1.8em;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: vars.$mediaMobile) {
+            padding: 0.6em 1.6em;
+            font-size: 0.7rem;
+        }
+
+        &:hover,
+        &:focus-visible {
+            color: vars.$darkTextColor;
+            background-color: vars.$blackBgColor;
+            outline: none;
+
+            @media (hover: none) {
+                background-color: unset;
+                color: vars.$mainTextColor;
+            }
+        }
+    }
+
+    &__button--black {
+        background-color: vars.$blackBgColor;
+        color: vars.$lightTextColor;
+
+        &:hover {
+            @media (hover: none) {
+                background-color: vars.$blackBgColor;
+                color: vars.$lightTextColor;
+            }
+        }
+    }
+}
+
+.webp .hero {
+    &__container {
+        background: url("./assets/img/hero_pic.webp") center right / 686px 650px
+                no-repeat,
+            url("./assets/img/honey_text.webp") center right / 1408px 650px
+                no-repeat,
+            vars.$mainGrad;
+
+        @media (max-width: vars.$mediaTablet) {
+            background: url("./assets/img/honey_text.webp") center right /
+                    1408px 650px no-repeat,
+                vars.$mainGrad;
+        }
+    }
+}
+
+.avif .hero {
+    &__container {
+        background: url("./assets/img/hero_pic.avif") center right / 686px 650px
+                no-repeat,
+            url("./assets/img/honey_text.avif") center right / 1408px 650px
+                no-repeat,
+            vars.$mainGrad;
+
+        @media (max-width: vars.$mediaTablet) {
+            background: url("./assets/img/honey_text.avif") center right /
+                    1408px 650px no-repeat,
+                vars.$mainGrad;
+        }
+    }
+}
+
+.buttons-wrapper {
+    display: flex;
+    gap: min(1.875rem, 3vw);
+
+    @media (max-width: vars.$mediaTablet) {
+        justify-content: center;
+        gap: min(1.5rem, 3vw);
+    }
+}
+
+.honey-pouring-wrapper {
+    @include mixins.position(absolute, -1, top, left, 1rem, 0);
+    translate: -50% 0;
+
+    @media (max-width: vars.$mediaTablet) {
+        width: 130px;
+        height: 190px;
+    }
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        width: 80px;
+        height: 130px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        width: 60px;
+        height: 120px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        width: 40px;
+        height: 110px;
+    }
+}

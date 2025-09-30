@@ -2,29 +2,17 @@
 @use "../utils/mixins";
 
 .header {
-    padding: 2em 0;
+    padding: 2em 2rem;
     position: relative;
 
     &__container {
-        max-width: vars.$bigContainerWidth;
-        padding-left: min(
-            calc(
-                (
-                        vars.$bigContainerWidth - vars.$smallContainerWidth +
-                            vars.$containerPadding
-                    ) / 2
-            ),
-            13vw
-        );
-
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
+        padding: 0;
         align-items: center;
 
         @media (max-width: vars.$mediaMobile) {
-            padding-left: vars.$containerPadding;
-
             &::before {
                 content: "";
                 @include mixins.position(absolute, 0);

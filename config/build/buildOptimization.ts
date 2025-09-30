@@ -3,7 +3,6 @@ import ImageMinimizerPlugin from "image-minimizer-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import { BuildOptions } from "./types/types";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
-import ImageminWebpWebpackPlugin from "imagemin-webp-webpack-plugin";
 
 export function buildOptimization({
     mode,
@@ -40,7 +39,6 @@ export function buildOptimization({
                     },
                 },
             }),
-            new ImageminWebpWebpackPlugin(),
             new TerserPlugin({
                 parallel: true,
                 extractComments: "all",

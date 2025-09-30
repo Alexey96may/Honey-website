@@ -8,6 +8,7 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import ImageminAvifWebpackPlugin from "imagemin-avif-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import SVGSpritemapPlugin from "svg-spritemap-webpack-plugin";
+import ImageminWebpWebpackPlugin from "imagemin-webp-webpack-plugin";
 import path from "path";
 import CopyPlugin from "copy-webpack-plugin";
 
@@ -30,6 +31,7 @@ export function buildPlugins({
                 filename: "/assets/sprites/spritemap.svg",
             },
         }),
+        new ImageminWebpWebpackPlugin(),
         new ImageminAvifWebpackPlugin({
             config: [
                 {
@@ -87,6 +89,10 @@ export function buildPlugins({
                 {
                     from: path.resolve(paths.src, "assets", "img"),
                     to: path.resolve(paths.output, "assets", "img"),
+                },
+                {
+                    from: path.resolve(paths.src, "assets", "fonts"),
+                    to: path.resolve(paths.output, "assets", "fonts"),
                 },
             ],
         })
