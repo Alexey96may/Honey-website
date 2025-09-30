@@ -12,5 +12,8 @@
     <body>
         <!-- prettier-ignore! -->
         <%=_.template(require('raw-loader!@/partials/header.html').default)()%>
+        <main class="main">
+            <%=_.template(require('raw-loader!@/partials/hero.html').default)()%>
+        </main>
     </body>
 </html>

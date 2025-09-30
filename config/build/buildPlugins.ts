@@ -58,7 +58,7 @@ export function buildPlugins({
                         `${page.name}.html`
                     ),
                     chunks: page.chunks ? page.chunks : [],
-                    inject: false,
+                    // inject: false,
                     cache: false,
                 })
             );
