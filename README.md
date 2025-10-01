@@ -6,4 +6,4 @@
 
 ## Original Design Layout
 
-[Alt-Original Design Layout](/design.webp)
+![Alt-Original Design Layout](/design.webp)
