@@ -1,1 +1,136 @@
 @use "@/assets/scss/utils/vars";
+
+.shops {
+    padding-top: 8.125rem;
+
+    &__title {
+        font-weight: 700;
+        font-size: 2.8rem;
+        line-height: 1.6;
+        margin-bottom: 1.11em;
+
+        @media (max-width: vars.$mediaMobile) {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        @media (max-width: vars.$mediaMobile) {
+            justify-content: center;
+        }
+    }
+}
+
+.shop {
+    &__luxopica {
+        aspect-ratio: 9/2;
+        width: 144px;
+        height: auto;
+    }
+
+    &__miu-miu {
+        aspect-ratio: 6/1;
+        width: 228px;
+        height: auto;
+    }
+
+    &__dunkin {
+        aspect-ratio: 17/3;
+        width: 204px;
+        height: auto;
+    }
+
+    &__burberry {
+        aspect-ratio: 53/7;
+        width: 265px;
+        height: auto;
+    }
+}
+
+@media (max-width: vars.$mediaPC) {
+    .shop {
+        &__luxopica {
+            width: 124px;
+        }
+
+        &__miu-miu {
+            width: 208px;
+        }
+
+        &__dunkin {
+            width: 185px;
+        }
+
+        &__burberry {
+            width: 235px;
+        }
+    }
+}
+
+@media (max-width: vars.$mediaTablet) {
+    .shop {
+        &__luxopica {
+            width: 114px;
+        }
+
+        &__miu-miu {
+            width: 198px;
+        }
+
+        &__dunkin {
+            width: 175px;
+        }
+
+        &__burberry {
+            width: 225px;
+        }
+    }
+}
+
+@media (max-width: vars.$mediaMobile) {
+    .shop {
+        &__luxopica {
+            width: 84px;
+        }
+
+        &__miu-miu {
+            width: 148px;
+        }
+
+        &__dunkin {
+            width: 135px;
+        }
+
+        &__burberry {
+            width: 185px;
+        }
+    }
+}
+
+@media (max-width: vars.$mediaSmallMobile) {
+    .shop {
+        &__luxopica {
+            width: 64px;
+        }
+
+        &__miu-miu {
+            width: 118px;
+        }
+
+        &__dunkin {
+            width: 115px;
+        }
+
+        &__burberry {
+            width: 155px;
+        }
+    }
+}
