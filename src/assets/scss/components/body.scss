@@ -35,6 +35,10 @@ body {
     color: vars.$mainTextColor;
 }
 
+.body__fixed {
+    overflow: hidden;
+}
+
 .container {
     max-width: vars.$smallContainerWidth;
     padding: 0 vars.$containerPadding;

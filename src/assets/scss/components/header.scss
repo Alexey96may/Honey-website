@@ -30,10 +30,16 @@
 
     @media (max-width: vars.$mediaMobile) {
         @include mixins.position(absolute, 0);
-        top: -500px;
+        top: 84px;
         left: 0;
         visibility: hidden;
         opacity: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 100vw;
+        height: 100vh;
+        z-index: 9;
     }
 }
 
@@ -83,6 +89,7 @@
 
         @media (max-width: vars.$mediaMobile) {
             padding: min(20px, 3vw) 0;
+            font-size: 1.5rem;
         }
 
         &:hover,
@@ -153,7 +160,7 @@
     .navigation--appear {
         visibility: visible;
         opacity: 1;
-        top: 105px;
+        top: 84px;
     }
 
     .burger--cancel {
