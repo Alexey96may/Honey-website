@@ -49,7 +49,7 @@
     height: 784px;
     flex-basis: 827px;
     flex-grow: 1;
-    background: url("./assets/img/honeycomb.png") center / contain no-repeat;
+    background: url("/assets/img/honeycomb.png") center / contain no-repeat;
 
     @media (max-width: vars.$mediaTablet) {
         width: 100%;
