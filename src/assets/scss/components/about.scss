@@ -1,0 +1,133 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+.about {
+    padding: 8.125rem 1rem 0;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 6.25rem;
+        max-width: 1407px;
+        padding: 0;
+
+        @media (max-width: vars.$mediaMobile) {
+            gap: 5.25rem;
+        }
+
+        @media (max-width: vars.$mediaSmallMobile) {
+            gap: 4.55rem;
+        }
+    }
+}
+
+.about-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+    gap: 2rem;
+
+    @media (max-width: vars.$mediaTablet) {
+        display: block;
+        padding-right: 0;
+    }
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+        padding-left: 2rem;
+
+        @media (max-width: vars.$mediaTablet) {
+            flex-direction: column;
+            padding-left: 0;
+        }
+    }
+}
+
+.about-card_img-wrapper {
+    position: relative;
+    height: 784px;
+    flex-basis: 827px;
+    flex-grow: 1;
+    background: url("./assets/img/honeycomb.png") center / contain no-repeat;
+
+    @media (max-width: vars.$mediaTablet) {
+        width: 100%;
+        height: auto;
+        margin-bottom: 2em;
+    }
+
+    img {
+        @include mixins.position(absolute, -1, top, left, 50%, 50%);
+        translate: -50% -50%;
+        object-fit: contain;
+
+        @media (max-width: vars.$mediaTablet) {
+            @include mixins.position(relative, -1, top, left, unset, unset);
+            translate: unset;
+        }
+    }
+}
+
+.about-card_text-wrapper {
+    flex-basis: 516px;
+
+    @media (max-width: vars.$mediaTablet) {
+        flex-grow: 1;
+        flex-basis: auto;
+    }
+}
+
+.about-card__title {
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 1.45;
+    margin-bottom: 0.67em;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 1.8rem;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        margin-bottom: 0.47em;
+    }
+}
+
+.about-card__descr {
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.6;
+    margin-bottom: 2.27em;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        margin-bottom: 1.27em;
+    }
+}
+
+.about-card__buton {
+    font-size: 1.125rem;
+    color: vars.$lightTextColor;
+    font-weight: 700;
+    line-height: 1.6;
+    background-color: vars.$darkBgColor;
+    padding: 0.83em 2.22em;
+    border: none;
+    transition: vars.$basicTrans;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 1rem;
+    }
+
+    &:hover,
+    &:focus-visible {
+        background-color: vars.$darkerBgColor;
+
+        @media (hover: none) {
+            background-color: vars.$darkBgColor;
+        }
+    }
+}
