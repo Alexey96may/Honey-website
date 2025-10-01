@@ -7,9 +7,9 @@
     &__container {
         position: relative;
         background-color: vars.$darkBgColor;
-        background: url("./assets/img/hero_pic.png") center right / 686px 650px
+        background: url("../assets/img/hero_pic.png") center right / 686px 650px
                 no-repeat,
-            url("./assets/img/honey_text.png") center right / 1408px 650px
+            url("../assets/img/honey_text.png") center right / 1408px 650px
                 no-repeat,
             vars.$mainGrad;
         max-width: vars.$bigContainerWidth;
@@ -34,8 +34,8 @@
         }
 
         @media (max-width: vars.$mediaTablet) {
-            background: url("./assets/img/honey_text.png") center right / 1408px
-                    650px no-repeat,
+            background: url("../assets/img/honey_text.png") center right /
+                    1408px 650px no-repeat,
                 vars.$mainGrad;
             padding: 10rem 5rem 10rem;
         }
@@ -231,14 +231,14 @@
 
 .webp .hero {
     &__container {
-        background: url("./assets/img/hero_pic.webp") center right / 686px 650px
-                no-repeat,
-            url("./assets/img/honey_text.webp") center right / 1408px 650px
+        background: url("../assets/img/hero_pic.webp") center right / 686px
+                650px no-repeat,
+            url("../assets/img/honey_text.webp") center right / 1408px 650px
                 no-repeat,
             vars.$mainGrad;
 
         @media (max-width: vars.$mediaTablet) {
-            background: url("./assets/img/honey_text.webp") center right /
+            background: url("../assets/img/honey_text.webp") center right /
                     1408px 650px no-repeat,
                 vars.$mainGrad;
         }
@@ -247,14 +247,14 @@
 
 .avif .hero {
     &__container {
-        background: url("./assets/img/hero_pic.avif") center right / 686px 650px
-                no-repeat,
-            url("./assets/img/honey_text.avif") center right / 1408px 650px
+        background: url("../assets/img/hero_pic.avif") center right / 686px
+                650px no-repeat,
+            url("../assets/img/honey_text.avif") center right / 1408px 650px
                 no-repeat,
             vars.$mainGrad;
 
         @media (max-width: vars.$mediaTablet) {
-            background: url("./assets/img/honey_text.avif") center right /
+            background: url("../assets/img/honey_text.avif") center right /
                     1408px 650px no-repeat,
                 vars.$mainGrad;
         }
