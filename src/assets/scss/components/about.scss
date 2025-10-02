@@ -33,6 +33,14 @@
         padding-right: 0;
     }
 
+    @media (max-width: vars.$mediaMobile) {
+        padding: 0 1rem;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        padding: 0;
+    }
+
     &:nth-child(even) {
         flex-direction: row-reverse;
         padding-left: 2rem;
@@ -40,6 +48,14 @@
         @media (max-width: vars.$mediaTablet) {
             flex-direction: column;
             padding-left: 0;
+        }
+
+        @media (max-width: vars.$mediaMobile) {
+            padding: 0 1rem;
+        }
+
+        @media (max-width: vars.$mediaSmallMobile) {
+            padding: 0;
         }
     }
 }
@@ -67,6 +83,14 @@
             translate: unset;
         }
     }
+}
+
+.webp .about-card_img-wrapper {
+    background: url("../assets/img/honeycomb.webp") center / contain no-repeat;
+}
+
+.avif .about-card_img-wrapper {
+    background: url("../assets/img/honeycomb.avif") center / contain no-repeat;
 }
 
 .about-card_text-wrapper {

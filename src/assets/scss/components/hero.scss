@@ -40,6 +40,12 @@
             padding: 10rem 5rem 10rem;
         }
 
+        @media (max-width: vars.$mediaMobile) {
+            background: url("../assets/img/honey_text.png") center / 100% 60%
+                    no-repeat,
+                vars.$mainGrad;
+        }
+
         @media (max-width: vars.$mediaTablet) {
             padding: 7rem 5rem 7rem;
         }
@@ -242,6 +248,12 @@
                     1408px 650px no-repeat,
                 vars.$mainGrad;
         }
+
+        @media (max-width: vars.$mediaMobile) {
+            background: url("../assets/img/honey_text.webp") center / 100% 60%
+                    no-repeat,
+                vars.$mainGrad;
+        }
     }
 }
 
@@ -256,6 +268,12 @@
         @media (max-width: vars.$mediaTablet) {
             background: url("../assets/img/honey_text.avif") center right /
                     1408px 650px no-repeat,
+                vars.$mainGrad;
+        }
+
+        @media (max-width: vars.$mediaMobile) {
+            background: url("../assets/img/honey_text.avif") center / 100% 60%
+                    no-repeat,
                 vars.$mainGrad;
         }
     }
