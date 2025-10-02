@@ -40,7 +40,7 @@
             padding: 10rem 5rem 10rem;
         }
 
-        @media (max-width: vars.$mediaMobile) {
+        @media (max-width: vars.$mediaSmallTablet) {
             background: url("../assets/img/honey_text.png") center / 95% 60%
                     no-repeat,
                 vars.$mainGrad;
@@ -249,7 +249,7 @@
                 vars.$mainGrad;
         }
 
-        @media (max-width: vars.$mediaMobile) {
+        @media (max-width: vars.$mediaSmallTablet) {
             background: url("../assets/img/honey_text.webp") center / 95% 60%
                     no-repeat,
                 vars.$mainGrad;
@@ -271,7 +271,7 @@
                 vars.$mainGrad;
         }
 
-        @media (max-width: vars.$mediaMobile) {
+        @media (max-width: vars.$mediaSmallTablet) {
             background: url("../assets/img/honey_text.avif") center / 95% 60%
                     no-repeat,
                 vars.$mainGrad;
